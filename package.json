@@ -1,0 +1,23 @@
+{
+  "name": "realify-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "REALIFY — Programmatic Video Engine",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.12.7"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@realify/schemas",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist", "src"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test",
+    "lint": "echo 'no lint yet'"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "ajv": "^8.12.0"
+  }
+}

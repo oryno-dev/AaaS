@@ -1,0 +1,17 @@
+{
+  "name": "@realify/remotion-app",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "remotion": "^4.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@realify/compiler": "workspace:*",
+    "@realify/schemas": "workspace:*"
+  },
+  "scripts": {
+    "build": "echo remotion app placeholder",
+    "test": "node --version"
+  }
+}

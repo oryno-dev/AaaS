@@ -1,0 +1,22 @@
+{
+  "name": "@realify/vectorizer",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist", "src"],
+  "bin": {
+    "realify-vectorize": "dist/cli.js"
+  },
+  "dependencies": {
+    "svgo": "^3.3.2",
+    "yargs": "^17.7.2"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "@types/yargs": "^17.0.32"
+  }
+}

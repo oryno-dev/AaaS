@@ -1,0 +1,17 @@
+{
+  "name": "@realify/motion-ir",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist", "src"],
+  "dependencies": {
+    "ajv": "^8.12.0",
+    "@realify/schemas": "workspace:*"
+  },
+
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test"
+  }
+}

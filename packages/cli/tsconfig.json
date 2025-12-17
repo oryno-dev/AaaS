@@ -1,0 +1,20 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "include": ["src"],
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "src",
+    "outDir": "dist",
+    "jsx": "react-jsx",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext"
+  },
+  "references": [
+    { "path": "../vectorizer" },
+    { "path": "../mapper" },
+    { "path": "../validator" },
+    { "path": "../motion-ir" },
+    { "path": "../compiler" },
+    { "path": "../llm-gates" }
+  ]
+}

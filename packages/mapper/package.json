@@ -1,0 +1,24 @@
+{
+  "name": "@realify/mapper",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist", "src"],
+  "bin": {
+    "realify-map": "dist/cli.js"
+  },
+  "dependencies": {
+    "@realify/schemas": "workspace:*",
+    "ajv": "^8.12.0",
+    "yargs": "^17.7.2"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test",
+    "lint": "echo 'no lint yet'"
+  },
+  "devDependencies": {
+    "@types/yargs": "^17.0.32"
+  }
+}

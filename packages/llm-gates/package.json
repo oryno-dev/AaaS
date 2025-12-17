@@ -1,0 +1,17 @@
+{
+  "name": "@realify/llm-gates",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist", "src"],
+  "dependencies": {
+    "@realify/validator": "workspace:*",
+    "@realify/schemas": "workspace:*",
+    "@realify/motion-ir": "workspace:*"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test"
+  }
+}

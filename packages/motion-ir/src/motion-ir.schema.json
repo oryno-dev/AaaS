@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://realify.dev/schemas/motion-ir.schema.json",
+  "title": "Motion IR",
+  "type": "object",
+  "properties": {
+    "timeline": { "type": "number", "minimum": 1 },
+    "tracks": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/Track" }
+    }
+  },
+  "required": ["timeline", "tracks"],
+  "additionalProperties": false,
+  "definitions": {
+    "Easing": { "type": "string" },
+    "KeyframeBase": {
+      "type": "object",
+      "properties": {
+        "frame": { "type": "integer", "minimum": 0 },
+        "easing": { "$ref": "#/definitions/Easing" }
+      },
+      "required": ["frame"],
+      "additionalProperties": true
+    },
+    "ElementKeyframe": {
+      "allOf": [ { "$ref": "#/definitions/KeyframeBase" } ],
+      "type": "object",
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" },
+        "opacity": { "type": "number", "minimum": 0, "maximum": 1 },
+        "scale": { "type": "number", "minimum": 0 },
+        "rotation": { "type": "number" },
+        "textContent": { "type": "string" }
+      }
+    },
+    "CameraKeyframe": {
+      "allOf": [ { "$ref": "#/definitions/KeyframeBase" } ],
+      "type": "object",
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" },
+        "z": { "type": "number", "exclusiveMinimum": 0 },
+        "rotation": { "type": "number" }
+      }
+    },
+    "ElementTrack": {
+      "type": "object",
+      "properties": {
+        "kind": { "const": "element" },
+        "targetId": { "type": "string", "minLength": 1 },
+        "keyframes": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/ElementKeyframe" },
+          "minItems": 1
+        }
+      },
+      "required": ["kind", "targetId", "keyframes"],
+      "additionalProperties": false
+    },
+    "CameraTrack": {
+      "type": "object",
+      "properties": {
+        "kind": { "const": "camera" },
+        "keyframes": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/CameraKeyframe" },
+          "minItems": 1
+        }
+      },
+      "required": ["kind", "keyframes"],
+      "additionalProperties": false
+    },
+    "Track": {
+      "oneOf": [
+        { "$ref": "#/definitions/ElementTrack" },
+        { "$ref": "#/definitions/CameraTrack" }
+      ]
+    }
+  }
+}

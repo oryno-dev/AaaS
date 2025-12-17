@@ -1,0 +1,16 @@
+{
+  "elements": [
+    {
+      "id": "btn-123",
+      "type": "button",
+      "bbox": {"x": 100, "y": 200, "width": 120, "height": 40},
+      "semanticRole": "primary"
+    },
+    {
+      "id": "lbl-username",
+      "type": "text",
+      "bbox": {"x": 100, "y": 150, "width": 200, "height": 20}
+    }
+  ],
+  "meta": {"width": 1280, "height": 720, "source": "mock"}
+}

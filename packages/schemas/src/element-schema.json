@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://realify.dev/schemas/element-schema.json",
+  "title": "Element Schema",
+  "type": "object",
+  "properties": {
+    "elements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Element"
+      }
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "source": {"type": "string"},
+        "width": {"type": "number"},
+        "height": {"type": "number"}
+      },
+      "required": ["width", "height"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["elements", "meta"],
+  "additionalProperties": false,
+  "definitions": {
+    "BBox": {
+      "type": "object",
+      "properties": {
+        "x": {"type": "number"},
+        "y": {"type": "number"},
+        "width": {"type": "number", "minimum": 0},
+        "height": {"type": "number", "minimum": 0}
+      },
+      "required": ["x", "y", "width", "height"],
+      "additionalProperties": false
+    },
+    "Element": {
+      "type": "object",
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "type": {
+          "type": "string",
+          "enum": ["button", "text", "input", "cursor", "container", "shape", "image"]
+        },
+        "bbox": {"$ref": "#/definitions/BBox"},
+        "editable": {"type": "boolean"},
+        "semanticRole": {"type": "string"}
+      },
+      "required": ["id", "type", "bbox"],
+      "additionalProperties": false
+    }
+  }
+}
